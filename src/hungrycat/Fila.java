@@ -20,4 +20,10 @@ public class Fila {
     public void addRestriccion(Restriccion r){
         this.restricciones.add(r);
     }
+
+    @Override
+    public String toString() {
+        return "Fila{" + "restricciones=" + restricciones + '}';
+    }
+    
 }

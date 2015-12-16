@@ -1,9 +1,7 @@
 <?xml version="1.0"?>
 <nivel id="3">
-    <size>
-        <n>5</n>
-        <m>5</m>
-    </size>
+    <m>5</m>
+	<n>5</n>
     <colores>3</colores>
     <filas>
         <fila id="1">

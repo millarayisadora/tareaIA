@@ -12,10 +12,12 @@ import java.util.logging.Logger;
 public class Main {
     public static void main(String[] args) {
         Nivel nivel;
-        nivel = XmlUtils.loadNivel();
+        //nivel = XmlUtils.loadNivel();
+        nivel = XmlUtils.readNivel();
         
         System.out.println("Size: "+nivel.getN()+" x "+nivel.getM());
         System.out.println(nivel.toString());
+        
         int i =0;
         while(nivel.getRestantes() != 0){
             ++i;
