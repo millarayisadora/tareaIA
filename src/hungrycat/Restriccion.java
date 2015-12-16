@@ -36,6 +36,11 @@ public class Restriccion {
     public void setContinuos(Boolean continuos) {
         this.continuos = continuos;
     }
+
+    @Override
+    public String toString() {
+        return "Restriccion{" + "color=" + color + ", cantidad=" + cantidad + ", continuos=" + continuos + '}';
+    }
     
     
 }

@@ -43,6 +43,7 @@ public class XmlUtils {
             List xmlFilas = xmlNivel.getChildren("filas");
             Element xmlElementFilas = (Element)xmlFilas.get(0);
             xmlFilas = xmlElementFilas.getChildren();
+            
             System.out.println("Filas: "+xmlFilas.size());
             System.out.print("Restricciones: ");
             for(int i =0;i<xmlFilas.size();i++){
@@ -50,7 +51,7 @@ public class XmlUtils {
                 Fila fila = new Fila();
                 //Se obtiene la lista de restricciones por fila
                 List xmlRestricciones = xmlFila.getChildren();
-                for(int j=0;i<xmlRestricciones.size();i++){
+                for(int j=0; j<xmlRestricciones.size(); j++){
                     Element xmlRestriccion = (Element)xmlRestricciones.get(j);
                     Restriccion restriccion = new Restriccion();
                     int color = Integer.parseInt(xmlRestriccion.getChildTextTrim("color"));
@@ -68,7 +69,37 @@ public class XmlUtils {
             }
             System.out.println();
             
+            //Se obtiene la lista de Columnas
+            List xmlColumnas = xmlNivel.getChildren("columnas");
+            Element xmlElementColumnas = (Element)xmlColumnas.get(0);
+            xmlColumnas = xmlElementColumnas.getChildren();
             
+            System.out.println("Columnas: "+xmlColumnas.size());
+            System.out.print("Restricciones: ");
+            for(int i =0;i<xmlColumnas.size();i++){
+                Element xmlColumna = (Element)xmlColumnas.get(i);
+                Columna columna = new Columna();
+                //Se obtiene la lista de restricciones por fila
+                List xmlRestricciones = xmlColumna.getChildren();
+                for(int j=0; j<xmlRestricciones.size(); j++){
+                    Element xmlRestriccion = (Element)xmlRestricciones.get(j);
+                    Restriccion restriccion = new Restriccion();
+                    int color = Integer.parseInt(xmlRestriccion.getChildTextTrim("color"));
+                    int cantidad = Integer.parseInt(xmlRestriccion.getChildTextTrim("cantidad"));
+                    Boolean continuos = Boolean.parseBoolean(xmlRestriccion.getChildTextTrim("continuos"));
+                    
+                    restriccion.setColor(color);
+                    restriccion.setCantidad(cantidad);
+                    restriccion.setContinuos(continuos);
+                    
+                    columna.addRestriccion(restriccion);
+                }
+                System.out.print("C"+(i+1)+":"+xmlRestricciones.size()+" ");
+                columnas.add(columna);
+            }
+            System.out.println();
+            
+            // Settea el nivel
             nivel.setM(m);
             nivel.setN(n);
             nivel.setColores(colores);
@@ -86,9 +117,6 @@ public class XmlUtils {
         }finally{
             
         }
-        
-        
-        
         return nivel;
     }
     

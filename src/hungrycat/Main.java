@@ -22,7 +22,7 @@ public class Main {
         while(nivel.getRestantes() != 0){
             ++i;
             //Aplicar las reglas
-            nivel.printMatriz(i);//imprimir matriz
+            //nivel.printMatriz(i);//imprimir matriz
             try {
                 System.in.read(); //esperar enter para siguiente paso
             } catch (IOException ex) {
