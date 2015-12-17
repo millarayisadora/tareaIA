@@ -107,7 +107,7 @@ public class XmlUtils {
             nivel.setColores(colores);
             int[][] matrix = new int[m][n];
             for(int i = 0; i < m; i++){
-                for(int j=0; j<n; j++){
+                for(int j=0; j < n; j++){
                     matrix[i][j] = 0;
                 }
             }
@@ -131,7 +131,7 @@ public class XmlUtils {
         nivel.setColores(3);
         int[][] matrix = new int[m][n];
         for(int i = 0; i < m; i++){
-            for(int j=0; j<n; j++){
+            for(int j=0; j < n; j++){
                 matrix[i][j] = 0;
             }
         }

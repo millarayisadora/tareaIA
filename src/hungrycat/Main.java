@@ -29,6 +29,8 @@ public class Main {
             Reglas.columnaInter(nivel);
             Reglas.filaDosRestric(nivel);
             Reglas.columnaDosRestric(nivel);
+            Reglas.filaSola(nivel);
+            Reglas.columnaSola(nivel);
             
             nivel.printMatriz(i); //imprimir matriz
             try {

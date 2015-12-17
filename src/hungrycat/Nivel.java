@@ -95,7 +95,7 @@ public class Nivel {
         System.out.println("\n("+count+")---------------\n");
         for(int i = 0; i < m; i++){
             for(int j = 0; j < n; j++){
-                System.out.print(" "+matriz[j][i]+" ");
+                System.out.print(" "+matriz[i][j]+" ");
             }
             System.out.println("\n");
         }
