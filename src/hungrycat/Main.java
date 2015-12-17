@@ -23,6 +23,7 @@ public class Main {
             ++i;
             //Aplicar las reglas
             Reglas.filaCompleta(nivel);
+            Reglas.columnaCompleta(nivel);
             
             nivel.printMatriz(i); //imprimir matriz
             try {

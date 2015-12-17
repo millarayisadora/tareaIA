@@ -37,5 +37,42 @@ public class Reglas {
                 }
             }
         }
-    }    
+    }
+    
+    
+    /**
+     * Busca columnas completas de un color.<p>
+     * Si una columa completa es de un color la pinta.
+     * @param nivel 
+     */
+    public static void columnaCompleta(Nivel nivel){
+        ArrayList<Columna> columnas = nivel.getColumnas();
+        //revisa para cada columna.
+        for(int i = 0; i<columnas.size(); i++){
+            //System.out.println("entra al primer loop (para cada fila)");
+            ArrayList<Restriccion> rest = columnas.get(i).getRestricciones();
+            for(int j =0; j<rest.size(); j++){
+                //System.out.println("entra al segundo loop, para cada restriccion");
+                //Para cada restricción de la columna
+                Restriccion r = rest.get(j);
+                //Si la restriccion es del mismo numero de cuadros que la cantidad total de filas, la pinta.
+                //System.out.println(r.getCantidad()+" - "+nivel.getM());
+                if(r.getCantidad() == nivel.getM())
+                {
+                    //pinta la columna 'i'
+                    for(int k = 0; k<nivel.getM(); k++){
+                        nivel.getMatriz()[i][k] = r.getColor();
+                        nivel.setRestantes(nivel.getRestantes()-1); //uno menos a los restantes
+                    }
+                    System.out.println("Se ha pintado la columna "+(i+1)+" de color "+r.getColor());
+                    
+                    //borrar regla para que no entre de nuevo a esta
+                    rest.remove(j);
+                    columnas.get(i).setRestricciones(rest);
+                    
+                    return;
+                }
+            }
+        }
+    }
 }
