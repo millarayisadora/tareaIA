@@ -100,4 +100,33 @@ public class Nivel {
             System.out.println("\n");
         }
     }
+    
+    public void pintarCuadro(int f, int c, int color){
+        matriz[f][c] = color;
+        restantes--; //uno menos a los restantes
+        
+        // De aqui hacia abajo, todo lo que hay que verificar
+        // cuando se pinta un cuadrito :)
+        
+        // Verificar en f/c que la suma del color no sea una restriccion si es así, borrarla
+        Reglas.verificarColoresPorFila(this, f, color);
+        Reglas.verificarColoresPorColumna(this, c, color);
+        
+    }
+    
+    public int cuentaColorFila(int f, int color){
+        int count =0;
+        for(int i =0; i<m;i++){
+            if(matriz[i][n-1] == color) count++;
+        }
+        return count;
+    }
+    
+    public int cuentaColorColumna(int c, int color){
+        int count =0;
+        for(int f =0; f<n;f++){
+            if(matriz[m-1][f] == color) count++;
+        }
+        return count;
+    }
 }

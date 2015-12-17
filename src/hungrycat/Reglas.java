@@ -24,8 +24,7 @@ public class Reglas {
                 {
                     //pinta la fila 'i'
                     for(int k = 0; k<nivel.getN(); k++){
-                        nivel.getMatriz()[i][k] = r.getColor();
-                        nivel.setRestantes(nivel.getRestantes()-1); //uno menos a los restantes
+                        nivel.pintarCuadro(i, k, r.getColor());
                     }
                     System.out.println("Se ha pintado la fila "+(i+1)+" de color "+r.getColor());
                     
@@ -39,7 +38,6 @@ public class Reglas {
         }
     }
     
-    
     /**
      * Busca columnas completas de un color.<p>
      * Si una columa completa es de un color la pinta.
@@ -48,11 +46,10 @@ public class Reglas {
     public static void columnaCompleta(Nivel nivel){
         ArrayList<Columna> columnas = nivel.getColumnas();
         //revisa para cada columna.
-        for(int i = 0; i<columnas.size(); i++){
+        for(int col = 0; col<columnas.size(); col++){
             //System.out.println("entra al primer loop (para cada fila)");
-            ArrayList<Restriccion> rest = columnas.get(i).getRestricciones();
+            ArrayList<Restriccion> rest = columnas.get(col).getRestricciones();
             for(int j =0; j<rest.size(); j++){
-                //System.out.println("entra al segundo loop, para cada restriccion");
                 //Para cada restricción de la columna
                 Restriccion r = rest.get(j);
                 //Si la restriccion es del mismo numero de cuadros que la cantidad total de filas, la pinta.
@@ -61,14 +58,13 @@ public class Reglas {
                 {
                     //pinta la columna 'i'
                     for(int k = 0; k<nivel.getM(); k++){
-                        nivel.getMatriz()[i][k] = r.getColor();
-                        nivel.setRestantes(nivel.getRestantes()-1); //uno menos a los restantes
+                        nivel.pintarCuadro(k, col, r.getColor());
                     }
-                    System.out.println("Se ha pintado la columna "+(i+1)+" de color "+r.getColor());
+                    System.out.println("Se ha pintado la columna "+(col+1)+" de color "+r.getColor());
                     
                     //borrar regla para que no entre de nuevo a esta
                     rest.remove(j);
-                    columnas.get(i).setRestricciones(rest);
+                    columnas.get(col).setRestricciones(rest);
                     
                     return;
                 }
@@ -150,7 +146,6 @@ public class Reglas {
         }
     }
     
-    
     /**
      * Busca filas con 1 continuo y 1 no continuo .<p>
      * Si una fila tiene 2 restricciones, una de ellas es Cantidad 2 Continua,
@@ -193,7 +188,6 @@ public class Reglas {
             }
         }
     }
-    
     
     /**
      * Busca filas con 1 continuo y 1 no continuo .<p>
@@ -239,8 +233,6 @@ public class Reglas {
             }
         }
     }
-    
-    
     
     /**
      * Busca filas completas de un color.<p>
@@ -333,6 +325,40 @@ public class Reglas {
                     columnas.get(i).setRestricciones(rest);
                     
                     return;
+                }
+            }
+        }
+    }
+    
+    public static void verificarColoresPorFila(Nivel nivel, int f, int color){
+        int cant = nivel.cuentaColorFila(f, color);
+        ArrayList<Fila> filas = nivel.getFilas();
+        //revisa para cada fila.
+        for(int i = 0; i<filas.size(); i++){
+            ArrayList<Restriccion> rest = filas.get(i).getRestricciones();
+            for(int j =0; j<rest.size(); j++){
+                Restriccion r = rest.get(j);
+                if(r.getCantidad() == cant && r.getColor() ==color){
+                    rest.remove(j);
+                    filas.get(i).setRestricciones(rest);
+                    System.out.println("verificó fila");
+                }
+            }
+        }
+    }
+    
+    public static void verificarColoresPorColumna(Nivel nivel, int c, int color){
+        int cant = nivel.cuentaColorColumna(c, color);
+        ArrayList<Columna> columnas = nivel.getColumnas();
+        //revisa para cada columnas.
+        for(int i = 0; i<columnas.size(); i++){
+            ArrayList<Restriccion> rest = columnas.get(i).getRestricciones();
+            for(int j =0; j<rest.size(); j++){
+                Restriccion r = rest.get(j);
+                if(r.getCantidad() == cant && r.getColor() ==color){
+                    rest.remove(j);
+                    columnas.get(i).setRestricciones(rest);
+                    System.out.println("verificó columna");
                 }
             }
         }

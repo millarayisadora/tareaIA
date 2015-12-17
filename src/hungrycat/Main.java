@@ -23,14 +23,18 @@ public class Main {
             ++i;
             //Aplicar las reglas
             
-            Reglas.filaCompleta(nivel);
             Reglas.columnaCompleta(nivel);
+            Reglas.filaCompleta(nivel);
+            
+            /*
+            
             Reglas.filaInter(nivel);
             Reglas.columnaInter(nivel);
             Reglas.filaDosRestric(nivel);
             Reglas.columnaDosRestric(nivel);
             Reglas.filaSola(nivel);
             Reglas.columnaSola(nivel);
+            */
             
             nivel.printMatriz(i); //imprimir matriz
             try {
