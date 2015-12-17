@@ -22,8 +22,13 @@ public class Main {
         while(nivel.getRestantes() != 0){
             ++i;
             //Aplicar las reglas
+            
             Reglas.filaCompleta(nivel);
             Reglas.columnaCompleta(nivel);
+            Reglas.filaInter(nivel);
+            Reglas.columnaInter(nivel);
+            Reglas.filaDosRestric(nivel);
+            Reglas.columnaDosRestric(nivel);
             
             nivel.printMatriz(i); //imprimir matriz
             try {
