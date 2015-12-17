@@ -67,6 +67,7 @@ public class XmlUtils {
                 System.out.print("F"+(i+1)+":"+xmlRestricciones.size()+" ");
                 filas.add(fila);
             }
+            nivel.setFilas(filas);
             System.out.println();
             
             //Se obtiene la lista de Columnas
@@ -97,6 +98,7 @@ public class XmlUtils {
                 System.out.print("C"+(i+1)+":"+xmlRestricciones.size()+" ");
                 columnas.add(columna);
             }
+            nivel.setColumnas(columnas);
             System.out.println();
             
             // Settea el nivel

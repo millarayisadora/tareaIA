@@ -1,6 +1,7 @@
 package hungrycat;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -15,14 +16,15 @@ public class Main {
         //nivel = XmlUtils.loadNivel();
         nivel = XmlUtils.readNivel();
         
-        System.out.println("Size: "+nivel.getN()+" x "+nivel.getM());
-        System.out.println(nivel.toString());
         
         int i =0;
+        nivel.printMatriz(i); //imprimir matriz inicial
         while(nivel.getRestantes() != 0){
             ++i;
             //Aplicar las reglas
-            //nivel.printMatriz(i);//imprimir matriz
+            Reglas.filaCompleta(nivel);
+            
+            nivel.printMatriz(i); //imprimir matriz
             try {
                 System.in.read(); //esperar enter para siguiente paso
             } catch (IOException ex) {
