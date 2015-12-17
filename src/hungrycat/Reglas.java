@@ -20,7 +20,7 @@ public class Reglas {
                 Restriccion r = rest.get(j);
                 //Si la restriccion es del mismo numero de cuadros que la cantidad total de filas, la pinta.
                 //System.out.println(r.getCantidad()+" - "+nivel.getM());
-                if(r.getCantidad() == nivel.getM())
+                if(r.getCantidad() == nivel.getN())
                 {
                     //pinta la fila 'i'
                     for(int k = 0; k<nivel.getN(); k++){
