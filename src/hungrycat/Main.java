@@ -49,12 +49,17 @@ public class Main {
                 nivel.printMatriz(++i); //imprimir matriz
                 nivel.revisarRestricciones();
             }
-            /*
             
-            Reglas.filaInter(nivel);
-            Reglas.columnaInter(nivel);
+            if(Reglas.filaInter(nivel)){
+                nivel.printMatriz(++i); //imprimir matriz
+                nivel.revisarRestricciones();
+            }
             
-            */
+            if(Reglas.columnaInter(nivel)){
+                nivel.printMatriz(++i); //imprimir matriz
+                nivel.revisarRestricciones();
+            }
+            
             try {
                 System.in.read(); //esperar enter para siguiente paso
             } catch (IOException ex) {

@@ -84,7 +84,8 @@ public class Reglas {
      * se pinta la intersección.
      * @param nivel 
      */
-    public static void filaInter(Nivel nivel){
+    public static Boolean filaInter(Nivel nivel){
+        Boolean salida = false;
         ArrayList<Fila> filas = nivel.getFilas();
         //revisa para cada fila.
         for(int i = 0; i<filas.size(); i++){
@@ -100,8 +101,7 @@ public class Reglas {
                 {
                     //pinta la fila 'i'
                     for(int k = 1; k< (nivel.getN()-1); k++){
-                        nivel.getMatriz()[i][k] = r.getColor();
-                        nivel.setRestantes(nivel.getRestantes()-1); //uno menos a los restantes
+                        nivel.pintarCuadro(i, k, r.getColor());
                     }
                     System.out.println("Se ha pintado la fila "+(i+1)+" de color "+r.getColor());
                     
@@ -109,10 +109,11 @@ public class Reglas {
                     //rest.remove(j);
                     //filas.get(i).setRestricciones(rest);
                     
-                    return;
+                    return true;
                 }
             }
         }
+        return salida;
     }
     
     /**
@@ -121,7 +122,8 @@ public class Reglas {
      * se pinta la intersección.
      * @param nivel 
      */
-    public static void columnaInter(Nivel nivel){
+    public static Boolean columnaInter(Nivel nivel){
+        Boolean salida = false;
         ArrayList<Columna> columnas = nivel.getColumnas();
         //revisa para cada columna.
         for(int i = 0; i<columnas.size(); i++){
@@ -137,8 +139,7 @@ public class Reglas {
                 {
                     //pinta la columna 'i'
                     for(int k = 1; k<nivel.getM()-1; k++){
-                        nivel.getMatriz()[i][k] = r.getColor();
-                        nivel.setRestantes(nivel.getRestantes()-1); //uno menos a los restantes
+                        nivel.pintarCuadro(k, i, r.getColor());
                     }
                     System.out.println("columnaInter Se ha pintado la columna "+(i+1)+" de color "+r.getColor());
                     
@@ -146,10 +147,11 @@ public class Reglas {
                     //rest.remove(j);
                     //columnas.get(i).setRestricciones(rest);
                     
-                    return;
+                    return true;
                 }
             }
         }
+        return salida;
     }
     
     /**
