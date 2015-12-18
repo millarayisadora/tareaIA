@@ -63,6 +63,7 @@ public class XmlUtils {
                     restriccion.setContinuos(continuos);
                     
                     fila.addRestriccion(restriccion);
+                    //System.out.println(restriccion.toString());
                 }
                 System.out.print("F"+(i+1)+":"+xmlRestricciones.size()+" ");
                 filas.add(fila);
@@ -94,6 +95,7 @@ public class XmlUtils {
                     restriccion.setContinuos(continuos);
                     
                     columna.addRestriccion(restriccion);
+                    //System.out.println(restriccion.toString());
                 }
                 System.out.print("C"+(i+1)+":"+xmlRestricciones.size()+" ");
                 columnas.add(columna);

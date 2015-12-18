@@ -1,7 +1,6 @@
 package hungrycat;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -20,11 +19,27 @@ public class Main {
         int i =0;
         nivel.printMatriz(i); //imprimir matriz inicial
         while(nivel.getRestantes() != 0){
-            ++i;
             //Aplicar las reglas
             
-            Reglas.columnaCompleta(nivel);
-            Reglas.filaCompleta(nivel);
+            if(Reglas.columnaCompleta(nivel)){
+                nivel.printMatriz(++i); //imprimir matriz
+                nivel.revisarRestricciones();
+            }
+            
+            if(Reglas.filaCompleta(nivel)){
+                nivel.printMatriz(++i); //imprimir matriz
+                nivel.revisarRestricciones();
+            }
+            
+            if(Reglas.filaSola(nivel)){
+                nivel.printMatriz(++i); //imprimir matriz
+                nivel.revisarRestricciones();
+            }
+            
+            if(Reglas.columnaSola(nivel)){
+                nivel.printMatriz(++i); //imprimir matriz
+                nivel.revisarRestricciones();
+            }
             
             /*
             
@@ -32,16 +47,13 @@ public class Main {
             Reglas.columnaInter(nivel);
             Reglas.filaDosRestric(nivel);
             Reglas.columnaDosRestric(nivel);
-            Reglas.filaSola(nivel);
-            Reglas.columnaSola(nivel);
             */
-            
-            nivel.printMatriz(i); //imprimir matriz
             try {
                 System.in.read(); //esperar enter para siguiente paso
             } catch (IOException ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        System.out.println("Nivel resuelto :) ");
     }
 }
