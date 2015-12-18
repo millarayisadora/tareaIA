@@ -41,12 +41,19 @@ public class Main {
                 nivel.revisarRestricciones();
             }
             
+            if(Reglas.filaDosRestric(nivel)){
+                nivel.printMatriz(++i); //imprimir matriz
+                nivel.revisarRestricciones();
+            }
+            if(Reglas.columnaDosRestric(nivel)){
+                nivel.printMatriz(++i); //imprimir matriz
+                nivel.revisarRestricciones();
+            }
             /*
             
             Reglas.filaInter(nivel);
             Reglas.columnaInter(nivel);
-            Reglas.filaDosRestric(nivel);
-            Reglas.columnaDosRestric(nivel);
+            
             */
             try {
                 System.in.read(); //esperar enter para siguiente paso

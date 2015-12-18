@@ -1,66 +1,146 @@
 <?xml version="1.0"?>
 <nivel id="3">
-    <m>5</m>
-    <n>5</n>
-    <colores>2</colores>
+    <m>10</m>
+	<n>10</n>
+    <colores>3</colores>
     <filas>
         <fila id="1">
             <restriccion>
                 <color>1</color>
-                <cantidad>1</cantidad>
-                <continuos>false</continuos>
-            </restriccion>
-            <restriccion>
-                <color>2</color>
-                <cantidad>4</cantidad>
-                <continuos>false</continuos>
+                <cantidad>10</cantidad>
+                <continuos>true</continuos>
             </restriccion>
         </fila>
         <fila id="2">
             <restriccion>
                 <color>1</color>
                 <cantidad>2</cantidad>
-                <continuos>true</continuos>
-            </restriccion>
-            <restriccion>
-                <color>2</color>
-                <cantidad>3</cantidad>
                 <continuos>false</continuos>
+            </restriccion>
+			<restriccion>
+                <color>2</color>
+                <cantidad>8</cantidad>
+                <continuos>true</continuos>
             </restriccion>
         </fila>
         <fila id="3">
             <restriccion>
                 <color>1</color>
-                <cantidad>1</cantidad>
+                <cantidad>2</cantidad>
                 <continuos>false</continuos>
-            </restriccion>
-            <restriccion>
-                <color>2</color>
-                <cantidad>4</cantidad>
-                <continuos>false</continuos>
-            </restriccion>
-        </fila>
-        <fila id="4">
-            <restriccion>
-                <color>1</color>
-                <cantidad>1</cantidad>
-                <continuos>false</continuos>
-            </restriccion>
-            <restriccion>
-                <color>2</color>
-                <cantidad>4</cantidad>
-                <continuos>false</continuos>
-            </restriccion>
-        </fila>
-        <fila id="5">
-            <restriccion>
-                <color>1</color>
-                <cantidad>3</cantidad>
-                <continuos>true</continuos>
             </restriccion>
             <restriccion>
                 <color>2</color>
                 <cantidad>2</cantidad>
+                <continuos>false</continuos>
+            </restriccion>
+			<restriccion>
+                <color>3</color>
+                <cantidad>6</cantidad>
+                <continuos>true</continuos>
+            </restriccion>
+        </fila>
+		<fila id="4">
+            <restriccion>
+                <color>1</color>
+                <cantidad>2</cantidad>
+                <continuos>false</continuos>
+            </restriccion>
+            <restriccion>
+                <color>2</color>
+                <cantidad>2</cantidad>
+                <continuos>false</continuos>
+            </restriccion>
+			<restriccion>
+                <color>3</color>
+                <cantidad>6</cantidad>
+                <continuos>true</continuos>
+            </restriccion>
+        </fila>
+		<fila id="5">
+            <restriccion>
+                <color>1</color>
+                <cantidad>2</cantidad>
+                <continuos>false</continuos>
+            </restriccion>
+            <restriccion>
+                <color>2</color>
+                <cantidad>2</cantidad>
+                <continuos>false</continuos>
+            </restriccion>
+			<restriccion>
+                <color>3</color>
+                <cantidad>6</cantidad>
+                <continuos>true</continuos>
+            </restriccion>
+        </fila>
+		<fila id="6">
+            <restriccion>
+                <color>1</color>
+                <cantidad>2</cantidad>
+                <continuos>false</continuos>
+            </restriccion>
+            <restriccion>
+                <color>2</color>
+                <cantidad>2</cantidad>
+                <continuos>false</continuos>
+            </restriccion>
+			<restriccion>
+                <color>3</color>
+                <cantidad>6</cantidad>
+                <continuos>true</continuos>
+            </restriccion>
+        </fila>
+		<fila id="7">
+            <restriccion>
+                <color>1</color>
+                <cantidad>2</cantidad>
+                <continuos>false</continuos>
+            </restriccion>
+			<restriccion>
+                <color>2</color>
+                <cantidad>8</cantidad>
+                <continuos>true</continuos>
+            </restriccion>
+        </fila>
+        <fila id="8">
+            <restriccion>
+                <color>1</color>
+                <cantidad>8</cantidad>
+                <continuos>false</continuos>
+            </restriccion>
+            <restriccion>
+                <color>2</color>
+                <cantidad>2</cantidad>
+                <continuos>true</continuos>
+            </restriccion>
+        </fila>
+		<fila id="9">
+            <restriccion>
+                <color>1</color>
+                <cantidad>2</cantidad>
+                <continuos>false</continuos>
+            </restriccion>
+			<restriccion>
+                <color>2</color>
+                <cantidad>8</cantidad>
+                <continuos>true</continuos>
+            </restriccion>
+        </fila>
+        <fila id="10">
+            <restriccion>
+                <color>1</color>
+                <cantidad>2</cantidad>
+                <continuos>false</continuos>
+            </restriccion>
+            <restriccion>
+                <color>2</color>
+                <cantidad>4</cantidad>
+                <continuos>false</continuos>
+            </restriccion>
+			<restriccion>
+                <color>3</color>
+                <cantidad>4</cantidad>
                 <continuos>false</continuos>
             </restriccion>
         </fila>
@@ -68,8 +148,8 @@
     <columnas>
         <columna id="1">
             <restriccion>
-                <color>2</color>
-                <cantidad>5</cantidad>
+                <color>1</color>
+                <cantidad>10</cantidad>
                 <continuos>true</continuos>
             </restriccion>
         </columna>
@@ -81,18 +161,62 @@
             </restriccion>
             <restriccion>
                 <color>2</color>
-                <cantidad>3</cantidad>
+                <cantidad>8</cantidad>
                 <continuos>false</continuos>
             </restriccion>
         </columna>
         <columna id="3">
             <restriccion>
                 <color>1</color>
+                <cantidad>2</cantidad>
+                <continuos>false</continuos>
+            </restriccion>
+			<restriccion>
+                <color>2</color>
+                <cantidad>3</cantidad>
+                <continuos>false</continuos>
+            </restriccion>
+			<restriccion>
+                <color>3</color>
                 <cantidad>5</cantidad>
-                <continuos>true</continuos>
+                <continuos>false</continuos>
             </restriccion>
         </columna>
-        <columna id="4">
+		<columna id="4">
+            <restriccion>
+                <color>1</color>
+                <cantidad>2</cantidad>
+                <continuos>false</continuos>
+            </restriccion>
+			<restriccion>
+                <color>2</color>
+                <cantidad>3</cantidad>
+                <continuos>false</continuos>
+            </restriccion>
+			<restriccion>
+                <color>3</color>
+                <cantidad>5</cantidad>
+                <continuos>false</continuos>
+            </restriccion>
+        </columna>
+		<columna id="5">
+            <restriccion>
+                <color>1</color>
+                <cantidad>1</cantidad>
+                <continuos>false</continuos>
+            </restriccion>
+			<restriccion>
+                <color>2</color>
+                <cantidad>4</cantidad>
+                <continuos>false</continuos>
+            </restriccion>
+			<restriccion>
+                <color>3</color>
+                <cantidad>5</cantidad>
+                <continuos>false</continuos>
+            </restriccion>
+        </columna>
+        <columna id="6">
             <restriccion>
                 <color>1</color>
                 <cantidad>1</cantidad>
@@ -100,14 +224,65 @@
             </restriccion>
             <restriccion>
                 <color>2</color>
+                <cantidad>5</cantidad>
+                <continuos>false</continuos>
+            </restriccion>
+			<restriccion>
+                <color>3</color>
                 <cantidad>4</cantidad>
                 <continuos>true</continuos>
             </restriccion>
         </columna>
-        <columna id="5">
+		<columna id="7">
+            <restriccion>
+                <color>1</color>
+                <cantidad>2</cantidad>
+                <continuos>false</continuos>
+            </restriccion>
             <restriccion>
                 <color>2</color>
+                <cantidad>4</cantidad>
+                <continuos>false</continuos>
+            </restriccion>
+			<restriccion>
+                <color>3</color>
+                <cantidad>4</cantidad>
+                <continuos>true</continuos>
+            </restriccion>
+        </columna>
+		<columna id="8">
+            <restriccion>
+                <color>1</color>
+                <cantidad>2</cantidad>
+                <continuos>false</continuos>
+            </restriccion>
+			<restriccion>
+                <color>2</color>
+                <cantidad>3</cantidad>
+                <continuos>false</continuos>
+            </restriccion>
+			<restriccion>
+                <color>3</color>
                 <cantidad>5</cantidad>
+                <continuos>false</continuos>
+            </restriccion>
+        </columna>
+        <columna id="9">
+            <restriccion>
+                <color>1</color>
+                <cantidad>2</cantidad>
+                <continuos>false</continuos>
+            </restriccion>
+			<restriccion>
+                <color>2</color>
+                <cantidad>8</cantidad>
+                <continuos>false</continuos>
+            </restriccion>
+        </columna>
+		<columna id="10">
+            <restriccion>
+                <color>1</color>
+                <cantidad>10</cantidad>
                 <continuos>true</continuos>
             </restriccion>
         </columna>

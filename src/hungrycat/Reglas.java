@@ -158,7 +158,8 @@ public class Reglas {
      * se pinta esa cantidad (2) a los extremos. El otro color se pinta al medio.
      * @param nivel 
      */
-    public static void filaDosRestric(Nivel nivel){
+    public static Boolean filaDosRestric(Nivel nivel){
+        Boolean salida = false;
         ArrayList<Fila> filas = nivel.getFilas();
         //revisa para cada fila.
         for(int i = 0; i< filas.size(); i++){
@@ -174,25 +175,19 @@ public class Reglas {
                 {
                     //pinta la fila 'i'
                     for(int k = 1; k <(nivel.getN()-1); k++){
-                        nivel.getMatriz()[i][k] = r.getColor();
-                        nivel.setRestantes(nivel.getRestantes()-1); //uno menos a los restantes
+                        nivel.pintarCuadro(i, k, r.getColor());
                     }
-                    if (r.getCantidad()==2 && !r.getContinuos()){
-                        nivel.getMatriz()[i][0] = r.getColor();
-                        nivel.getMatriz()[i][nivel.getN()] = r.getColor();
-                        nivel.setRestantes(nivel.getRestantes()-2); //uno menos a los restantes
-                    }
-                    //Aquí pintar el otro color no continuo(2) ????
                     System.out.println("filaDosRestric Se ha pintado la fila "+(i+1)+" de color "+r.getColor());
                     
                     //borrar regla para que no entre de nuevo a esta
                     rest.remove(j);
                     filas.get(i).setRestricciones(rest);
                     
-                    return;
+                    return true;
                 }
             }
         }
+        return salida;
     }
     
     /**
@@ -201,7 +196,8 @@ public class Reglas {
      * se pinta esa cantidad (2) a los extremos. El otro color se pinta al medio.
      * @param nivel 
      */
-    public static void columnaDosRestric(Nivel nivel){
+    public static Boolean columnaDosRestric(Nivel nivel){
+        Boolean salida = false;
         ArrayList<Columna> columnas = nivel.getColumnas();
         //revisa para cada columna.
         for(int i = 0; i<columnas.size(); i++){
@@ -217,27 +213,19 @@ public class Reglas {
                 {
                     //pinta la columna 'i'
                     for(int k = 1; k<nivel.getM()-1; k++){
-                        nivel.getMatriz()[i][k] = r.getColor();
-                        nivel.setRestantes(nivel.getRestantes()-1); //uno menos a los restantes
+                        nivel.pintarCuadro(k, i, r.getColor());
                     }
                     System.out.println("columnaDosRestric Se ha pintado la columna "+(i+1)+" de color "+r.getColor());
-                    
-                    if(!r.getContinuos() && r.getCantidad()==2 )
-                    {
-                        nivel.getMatriz()[i][0] = r.getColor();
-                        nivel.setRestantes(nivel.getRestantes()-1); //uno menos a los restantes
-                        nivel.getMatriz()[i][nivel.getM()] = r.getColor();
-                        nivel.setRestantes(nivel.getRestantes()-1); //uno menos a los restantes
-                    }
                     
                     //borrar regla para que no entre de nuevo a esta
                     rest.remove(j);
                     columnas.get(i).setRestricciones(rest);
                     
-                    return;
+                    return true;
                 }
             }
         }
+        return salida;
     }
     
     /**

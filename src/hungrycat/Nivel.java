@@ -116,7 +116,7 @@ public class Nivel {
     
     public int cuentaColorFila(int f, int color){
         int count =0;
-        for(int i =0; i<m;i++){
+        for(int i =0; i<n;i++){
             if(matriz[f][i] == color) count++;
         }
         //System.out.println("fila "+f+" color: "+color+" cantidad:"+count);
@@ -125,7 +125,7 @@ public class Nivel {
     
     public int cuentaColorColumna(int c, int color){
         int count =0;
-        for(int i =0; i<n;i++){
+        for(int i =0; i<m;i++){
             if(matriz[i][c] == color) count++;
         }
         return count;
